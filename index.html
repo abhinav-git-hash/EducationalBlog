@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduTech Blog</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; }
+        nav { background: #34495e; text-align: center; padding: 12px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
+        .blog-post { background: white; padding: 20px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #ddd; }
+        .tags span { background: #3498db; color: white; padding: 5px 10px; border-radius: 4px; margin-right: 10px; }
+        .comment-box { margin-top: 20px; }
+        textarea { width: 100%; height: 80px; padding: 10px; margin-bottom: 10px; }
+        button { padding: 10px 15px; border: none; background: #27ae60; color: white; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #1e8449; }
+        .comment { background: #ecf0f1; padding: 10px; margin-top: 10px; border-radius: 4px; }
+        footer { text-align: center; padding: 15px; margin-top: 30px; background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EduTech Blog</h1>
+    <p>Your source for simple and clear educational content</p>
+</header>
+
+<nav>
+    <a href="#technology">Technology</a>
+    <a href="#health">Health</a>
+    <a href="#finance">Finance</a>
+</nav>
+
+<div class="container">
+
+    <div class="blog-post" id="technology">
+        <h2>The Future of Artificial Intelligence</h2>
+        <p><strong>Category:</strong> Technology</p>
+        <div class="tags">
+            <span>AI</span>
+            <span>Machine Learning</span>
+            <span>Innovation</span>
+        </div>
+        <p>
+            Artificial Intelligence is rapidly changing industries by automating complex tasks
+            and improving efficiency. From AI-powered assistants to advanced robotics, the future is intelligent
+            and full of opportunities.
+        </p>
+
+        <div class="comment-box">
+            <h3>Leave a Comment</h3>
+            <textarea id="comment-tech" placeholder="Write your comment..."></textarea>
+            <button onclick="postComment('tech')">Post Comment</button>
+            <div id="comments-tech"></div>
+        </div>
+    </div>
+
+    <div class="blog-post" id="health">
+        <h2>Tips for a Healthy Lifestyle</h2>
+        <p><strong>Category:</strong> Health</p>
+        <div class="tags">
+            <span>Fitness</span>
+            <span>Wellness</span>
+            <span>Nutrition</span>
+        </div>
+        <p>
+            Healthy living includes balanced eating, regular exercise, and proper sleep. Small lifestyle changes
+            can lead to long-term benefits for your body and mind.
+        </p>
+
+        <div class="comment-box">
+            <h3>Leave a Comment</h3>
+            <textarea id="comment-health" placeholder="Write your comment..."></textarea>
+            <button onclick="postComment('health')">Post Comment</button>
+            <div id="comments-health"></div>
+        </div>
+    </div>
+
+    <div class="blog-post" id="finance">
+        <h2>Beginner's Guide to Saving Money</h2>
+        <p><strong>Category:</strong> Finance</p>
+        <div class="tags">
+            <span>Savings</span>
+            <span>Budgeting</span>
+            <span>Money Management</span>
+        </div>
+        <p>
+            Saving money is easier when you track expenses, avoid unnecessary purchases, and set monthly goals.
+            A good financial plan can build your future security.
+        </p>
+
+        <div class="comment-box">
+            <h3>Leave a Comment</h3>
+            <textarea id="comment-finance" placeholder="Write your comment...	extarea>
+            <button onclick="postComment('finance')">Post Comment</button>
+            <div id="comments-finance"></div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 EduTech Blog | All Rights Reserved</p>
+</footer>
+
+<script>
+    function postComment(section) {
+        const textarea = document.getElementById(`comment-${section}`);
+        const commentsDiv = document.getElementById(`comments-${section}`);
+
+        if (textarea.value.trim() === '') {
+            alert('Please write a comment!');
+            return;
+        }
+
+        const newComment = document.createElement('div');
+        newComment.className = 'comment';
+        newComment.textContent = textarea.value;
+
+        commentsDiv.appendChild(newComment);
+        textarea.value = '';
+    }
+</script>
+
+</body>
+</html>
